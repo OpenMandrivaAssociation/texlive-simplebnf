@@ -1,6 +1,6 @@
 Name:		texlive-simplebnf
-Version:	64091
-Release:	2
+Version:	68959
+Release:	1
 Summary:	A simple package to format Backus-Naur form (BNF)
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/simplebnf
