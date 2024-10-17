@@ -3,7 +3,7 @@ Version:	68959
 Release:	1
 Summary:	A simple package to format Backus-Naur form (BNF)
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/simplebnf
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/simplebnf
 License:	mit
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/simplebnf.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/simplebnf.doc.r%{version}.tar.xz
