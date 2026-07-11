@@ -1,39 +1,27 @@
-Name:		texlive-simplebnf
-Version:	68959
-Release:	1
+%global tl_name simplebnf
+%global tl_revision 79057
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.1.0
+Release:	%{tl_revision}.1
 Summary:	A simple package to format Backus-Naur form (BNF)
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/simplebnf
 License:	mit
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/simplebnf.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/simplebnf.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/simplebnf.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/simplebnf.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides a simple way to format Backus-Naur form
-(BNF). The included bnfgrammar environment parses BNF
-expressions (possibly annotated), so users can write readable
-BNF expressions in their documents. The package requires expl3,
-xparse, and mathtools.
+This package provides a simple way for typesetting grammars in Backus-
+Naur form (BNF). The included bnf environment parses BNF expressions
+(possibly annotated), so users can write readable BNF expressions in
+their documents. It features a flexible configuration system, allowing
+for the customization of the domain-specific language (DSL) used in
+typesetting the grammar. Additionally, the package comes with sensible
+defaults. The package requires expl3, xparse, mathtools, and
+tabularray..
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/simplebnf
-%doc %{_texmfdistdir}/doc/latex/simplebnf
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
